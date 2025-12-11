@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* HMHY Brand Colors */
+    --white-smoke: 40 9% 97%;
+    --white-smoke-dark: 40 6% 92%;
+    --powder-blue: 220 36% 73%;
+    --violet-twilight: 250 53% 42%;
+    --pacific-blue: 187 68% 44%;
+    --hero-beige: 40 20% 90%;
+    --lime-accent: 75 65% 70%;
+    
+    /* Semantic tokens */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: var(--violet-twilight);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--powder-blue);
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 98%;
+    --muted-foreground: 0 0% 50%;
+    
+    --smoke-white: 40 9% 97%;
+
+    --accent: var(--pacific-blue);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: var(--violet-twilight);
+
+    --radius: 0.75rem;
+    
+    /* Custom gradients - more subtle and modern */
+    --gradient-top: linear-gradient(135deg, hsl(244 36% 51% / 0.15) 0%, hsl(187 68% 44% / 0.1) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 36% 73% / 0.05) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 244 36% 10%;
+    --foreground: 40 9% 94%;
+
+    --card: 244 30% 15%;
+    --card-foreground: 40 9% 94%;
+
+    --popover: 244 30% 15%;
+    --popover-foreground: 40 9% 94%;
+
+    --primary: var(--violet-twilight);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 244 20% 25%;
+    --secondary-foreground: 40 9% 94%;
+
+    --muted: 244 20% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: var(--pacific-blue);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 244 20% 25%;
+    --input: 244 20% 25%;
+    --ring: var(--violet-twilight);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: hsl(var(--foreground));
+  }
+  
+  h1 {
+    font-weight: 700;
+  }
+}
+
+.testimonials-carousel {
+  padding-bottom: 30px;
+}
